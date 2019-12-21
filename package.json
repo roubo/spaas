@@ -5,6 +5,9 @@
   "repository": "git@github.com:roubo/spaas.git",
   "author": "junjian <junjian_11@163.com>",
   "license": "MIT",
+  "bin": {
+    "spaas": "bin/spaas"
+  },
   "dependencies": {
     "chalk": "^3.0.0",
     "commander": "^4.0.1",

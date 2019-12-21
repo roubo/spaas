@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+/**
+ * SPAAS BIN
+ * @notice spaas 命令入口
+ * @author Roubo
+ * created on 2019/12/21
+ */
+
+const App = require("../index");
+
+App.Main();

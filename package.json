@@ -1,0 +1,24 @@
+{
+  "name": "spaas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:roubo/spaas.git",
+  "author": "junjian <junjian_11@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.0.1",
+    "handlebars": "^4.5.3",
+    "inquirer": "^7.0.1",
+    "log-symbols": "^3.0.0",
+    "ora": "^4.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
+  }
+}

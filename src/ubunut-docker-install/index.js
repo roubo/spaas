@@ -7,25 +7,29 @@
 const os = require("os");
 const path = require("path");
 const LogOut = require("../utils/LogOut");
-const { exec } = require("child_process");
+const { exec, spawn } = require("child_process");
 const entry = () => {
   if (os.platform() !== "linux") {
     LogOut.logError("暂不支持当前系统 !!");
     return;
   }
   LogOut.logFun("-> ubuntu docker install ...");
-  exec(
-    "sudo sh ./install.sh --mirror Aliyun",
-    { cwd: path.join(process.cwd(), "script") },
-    (err, stdout, stderr) => {
-      if (err) {
-        LogOut.logError(err);
-        return;
-      }
-      LogOut.logWarn(stderr);
-      LogOut.logFun(stdout);
+  let install = spawn("sudo ./install.sh --mirror Aliyun", {
+    cwd: path.join(process.cwd(), "src/ubuntu-docker-install/script")
+  });
+  install.stdout.on("data", data => {
+    LogOut.logInfo(data.toString());
+  });
+  install.stderr.on("data", data => {
+    LogOut.logWarn(data.toString());
+  });
+  install.on("exit", code => {
+    if (code === 0) {
+      LogOut.logFun("-> success.");
+    } else {
+      LogOut.logError("-> success.");
     }
-  );
+  });
 };
 
 const ubuntuDockerInstall = {

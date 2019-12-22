@@ -11,7 +11,7 @@ const program = require("commander");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const symbols = require("log-symbols");
-const ubuntuDockerInstall = require("./src/ubunut-docker-install/index");
+const ubuntuDockerInstall = require("./src/ubuntu-docker-install/index");
 const MessageOut = require("./src/utils/MessageOut");
 
 const Main = () => {

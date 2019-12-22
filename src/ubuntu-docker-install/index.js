@@ -13,9 +13,10 @@ const entry = () => {
     LogOut.logError("暂不支持当前系统 !!");
     return;
   }
+  let cwd = path.join(process.cwd(), "src/ubuntu-docker-install/script");
   LogOut.logFun("-> ubuntu docker install ...");
-  let install = spawn("sudo ./install.sh --mirror Aliyun", {
-    cwd: path.join(process.cwd(), "src/ubuntu-docker-install/script")
+  let install = spawn("bash", [cwd + "./install.sh", "--mirror", "Aliyun"], {
+    shell: true
   });
   install.stdout.on("data", data => {
     LogOut.logInfo(data.toString());
@@ -27,7 +28,7 @@ const entry = () => {
     if (code === 0) {
       LogOut.logFun("-> success.");
     } else {
-      LogOut.logError("-> success.");
+      LogOut.logError("-> failed.");
     }
   });
 };

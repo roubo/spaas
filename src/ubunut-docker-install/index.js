@@ -13,6 +13,7 @@ const entry = () => {
     LogOut.logError("暂不支持当前系统 !!");
     return;
   }
+  LogOut.logFun("-> ubuntu docker install ...");
   exec(
     "sudo sh ./install.sh --mirror Aliyun",
     { cwd: path.join(process.cwd(), "script") },

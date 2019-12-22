@@ -6,4 +6,4 @@ sudo apt-get install -y gcc g++ make
 
 echo "---------------------------------------------------------"
 echo "-> install spaas"
-npm install && npm link
+npm install && sudo npm link

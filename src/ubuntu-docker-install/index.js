@@ -13,7 +13,7 @@ const entry = () => {
     LogOut.logError("暂不支持当前系统 !!");
     return;
   }
-  let cwd = path.join(process.cwd(), "src/ubuntu-docker-install/script");
+  let cwd = path.join(process.cwd(), "src/ubuntu-docker-install/script/");
   LogOut.logFun("-> ubuntu docker install ...");
   let install = spawn("bash", [cwd + "./install.sh", "--mirror", "Aliyun"], {
     shell: true
